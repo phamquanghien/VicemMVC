@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using VicemMVC.Models;
+using VicemMVC.Models.ViewModels;
 
 namespace VicemMVC.Data
 {
