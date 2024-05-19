@@ -1,0 +1,34 @@
+@using Microsoft.AspNetCore.Identity
+@using VicemMVC.Models.ViewModels
+@model IEnumerable<UserWithRolesViewModel>
+
+<h2>User Roles</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Roles</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var userWithRoles in Model)
+        {
+            <tr>
+                <td>@userWithRoles.User.UserName</td>
+                <td>
+                    @foreach (var role in userWithRoles.Roles)
+                    {
+                        <span>@role,</span>
+                        <br /> <!-- Thêm dòng mới để mỗi vai trò hiển thị trên một dòng -->
+                    }
+                </td>
+                <td>
+                    <a asp-controller="UserRole" asp-action="AssignRole" asp-route-userId="@userWithRoles.User.Id">Assign
+                        Role</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

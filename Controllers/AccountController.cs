@@ -70,8 +70,10 @@ namespace VicemMVC.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
-
-
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
         private IActionResult RedirectToLocal(string returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl))

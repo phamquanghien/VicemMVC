@@ -28,6 +28,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home"
                                 asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Role" asp-action="Index">Role</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="UserRole"
+                                asp-action="Index">UserRole</a>
+                        </li>
                     </ul>
                     @{
                         await Html.RenderPartialAsync("_Login");
